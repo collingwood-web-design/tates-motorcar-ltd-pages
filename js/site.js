@@ -138,3 +138,15 @@ if (contactForm && contactModal) {
     }
   });
 }
+
+document.querySelectorAll(".faq-stack").forEach((stack) => {
+  const items = stack.querySelectorAll("details.faq-item");
+  items.forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+      items.forEach((other) => {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
+});

@@ -833,7 +833,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.85rem 0.15rem 0.85rem 0;
+  padding: 1rem 0.15rem 1rem 0;
   cursor: pointer;
   list-style: none;
   font-family: var(--font-body);
@@ -847,12 +847,16 @@ ul {
   display: none;
 }
 
+.faq-item[open] summary {
+  color: var(--white);
+}
+
 .faq-icon {
   position: relative;
-  width: 0.85rem;
-  height: 0.85rem;
+  width: 0.9rem;
+  height: 0.9rem;
   flex-shrink: 0;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .faq-icon::before,
@@ -885,7 +889,7 @@ ul {
 }
 
 .faq-body {
-  padding: 0 0 1.05rem;
+  padding: 0 2rem 1.25rem 0;
   overflow: hidden;
 }
 
@@ -895,10 +899,11 @@ ul {
 
 .faq-body p {
   margin: 0;
-  max-width: 68ch;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.95rem;
-  line-height: 1.65;
+  max-width: 52rem;
+  padding-right: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.98rem;
+  line-height: 1.7;
 }
 
 .faq-body a {
