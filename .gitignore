@@ -1,0 +1,9 @@
+.wrangler/
+_staging-images/
+assets/images/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+node_modules/
