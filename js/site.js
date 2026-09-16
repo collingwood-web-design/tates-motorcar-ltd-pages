@@ -96,3 +96,45 @@ if (contactMessage) {
     sessionStorage.removeItem("tmlContactPrefill");
   }
 }
+
+const contactForm = document.getElementById("contact-form");
+const contactModal = document.getElementById("contact-success-modal");
+const contactModalMessage = document.getElementById("contact-success-text");
+
+const closeContactModal = () => {
+  if (!contactModal) return;
+  contactModal.classList.remove("is-open");
+  contactModal.setAttribute("hidden", "");
+  document.body.classList.remove("contact-modal-open");
+};
+
+const openContactModal = (message) => {
+  if (!contactModal) return;
+  if (contactModalMessage) {
+    contactModalMessage.textContent =
+      message || "Thank you — your message has been sent.";
+  }
+  contactModal.removeAttribute("hidden");
+  contactModal.classList.add("is-open");
+  document.body.classList.add("contact-modal-open");
+  const closeBtn = contactModal.querySelector(".contact-modal-close");
+  if (closeBtn) closeBtn.focus();
+};
+
+if (contactForm && contactModal) {
+  contactForm.addEventListener("cwd-contact:success", (event) => {
+    const status = contactForm.querySelector("[data-cwd-contact-status]");
+    if (status) status.textContent = "";
+    openContactModal(event.detail && event.detail.message);
+  });
+
+  contactModal.querySelectorAll("[data-contact-modal-close]").forEach((el) => {
+    el.addEventListener("click", closeContactModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && contactModal.classList.contains("is-open")) {
+      closeContactModal();
+    }
+  });
+}
