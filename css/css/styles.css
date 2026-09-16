@@ -1,0 +1,1965 @@
+/* Tate's Motorcar Ltd. — homepage (match live WP layout) */
+:root {
+  --black: #000;
+  --ink: #0d0d0d;
+  --charcoal: #161616;
+  --steel: #222;
+  --muted: #9a9a9a;
+  --white: #fff;
+  --line: rgba(255, 255, 255, 0.18);
+  --accent: #9f8e7e;
+  --accent-active: #c5b398;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Lato", "Helvetica Neue", Arial, sans-serif;
+  --max: 1140px;
+  --cdn: https://media.cwd-cdn.com/tates-motorcar-ltd/images;
+  --header-offset: 6.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #222;
+  background: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+.site-nav a:focus-visible,
+.hero-cta:focus-visible,
+.hero-services a:focus-visible,
+.btn-submit:focus-visible,
+.footer-nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: min(100% - 2.5rem, var(--max));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--white);
+  color: var(--black);
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ========== Header ========== */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 30;
+  color: var(--white);
+}
+
+.top-bar {
+  background: var(--accent);
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0;
+}
+
+.header-phone {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.header-phone:hover {
+  opacity: 0.9;
+}
+
+.nav-bar {
+  background: var(--black);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: box-shadow 0.25s ease;
+}
+
+.site-header.is-scrolled .nav-bar {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.nav-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  min-height: 4.25rem;
+  padding: 0.55rem 0;
+}
+
+.header-logo {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.header-logo img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.site-nav a {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--accent-active);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--accent-active);
+}
+
+.nav-toggle {
+  display: none;
+  position: relative;
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--white);
+  width: 2.75rem;
+  height: 2.75rem;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 1.15rem;
+  height: 1px;
+  margin: 0.28rem auto;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(0.29rem) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-0.29rem) rotate(-45deg);
+}
+
+/* ========== Hero ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.18) 42%, rgba(0, 0, 0, 0.35) 100%),
+    url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/services-hero.jpg") center / cover no-repeat;
+}
+
+.hero-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(38vw, 420px);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.72) 28%, rgba(0, 0, 0, 0.82));
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr min(38vw, 420px);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "intro services"
+    "ctas services";
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 8.75rem 0 2.5rem;
+  column-gap: 1rem;
+  row-gap: 1.75rem;
+}
+
+.hero-intro {
+  grid-area: intro;
+  width: min(100% - 2.5rem, 560px);
+  margin-left: max(1.25rem, calc((100% - var(--max)) / 2));
+  padding-left: 1.35rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  animation: fade-left 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s forwards;
+}
+
+.hero-title {
+  margin: 0;
+}
+
+.hero-brand {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 9vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero-subbrand {
+  display: block;
+  margin-top: 0.08em;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.6vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-tagline {
+  margin: 1rem 0 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero-ctas {
+  grid-area: ctas;
+  display: grid;
+  gap: 0.95rem;
+  width: min(100% - 2.5rem, 560px);
+  margin-left: max(1.25rem, calc((100% - var(--max)) / 2));
+  padding-left: 1.35rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: fit-content;
+  min-height: 3.1rem;
+  padding: 0.35rem 1rem 0.35rem 0.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade-left 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: calc(0.4s + (var(--i, 0) * 0.15s));
+  transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.hero-cta-icon {
+  display: grid;
+  place-items: center;
+  width: 2.55rem;
+  height: 2.55rem;
+  border-radius: 50%;
+  background: #9a8e7f;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.hero-cta-icon svg {
+  display: block;
+}
+
+.hero-cta > span:last-child {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+.hero-services {
+  grid-area: services;
+  display: grid;
+  gap: 1.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-self: center;
+  align-content: center;
+  width: min(100% - 2rem, 300px);
+}
+
+.hero-services li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.95rem;
+  align-items: center;
+  opacity: 0;
+  animation: fade-right 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: calc(0.28s + (var(--i, 0) * 0.14s));
+}
+
+.hero-services a {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.95rem;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-services a:hover span {
+  color: var(--accent-active);
+}
+
+.hero-services img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.hero-services span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.marquee {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: #000;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  padding: 0.8rem 0;
+  animation: scroll 42s linear infinite;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.marquee-track span::after {
+  content: "|";
+  margin-left: 2.5rem;
+  opacity: 0.55;
+}
+
+/* ========== Shop exterior ========== */
+.shop-exterior img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ========== About ========== */
+.about {
+  position: relative;
+  padding: 4.75rem 0 5rem;
+  color: var(--white);
+  overflow: hidden;
+  background-color: #0a0a0a;
+  background-image: url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/about-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.28) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  z-index: 0;
+}
+
+.about > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.about-logo {
+  width: min(100%, 340px);
+  margin-inline: auto;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.about-card {
+  text-align: center;
+}
+
+.about-card-photo {
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 1.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #c4b7a4;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  filter: none;
+  transition: filter 0.45s ease;
+}
+
+.about-card-photo:hover {
+  filter: grayscale(1);
+}
+
+.about-card--middle .about-card-photo {
+  opacity: 0;
+  transform: translateY(-48px) scale(0.92);
+}
+
+.about.is-inview .about-card--middle .about-card-photo {
+  animation: about-drop-pulse 1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s forwards;
+}
+
+.about-card h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.about-card p {
+  margin: 0 auto;
+  max-width: 22rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+
+.motosel {
+  margin-top: 0;
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.motosel-icon {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 1.35rem;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.motosel h2 {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.motosel p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.motosel strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.motosel-brand {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.motosel-band {
+  position: relative;
+  padding: 4.5rem 0;
+  color: var(--white);
+  overflow: hidden;
+  background-color: #0a0a0a;
+  background-image: url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/about-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.motosel-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.28) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  z-index: 0;
+}
+
+.motosel-band > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== Team ========== */
+.team-band img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ========== Google reviews ========== */
+.reviews {
+  padding: 4rem 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.62)),
+    url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/services-hero.jpg") center / cover no-repeat;
+}
+
+.reviews-inner {
+  max-width: 920px;
+  min-height: 16rem;
+}
+
+.reviews-eyebrow {
+  margin: 0 0 0.55rem;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.reviews-kicker {
+  margin: 0 0 1.5rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+  font-weight: 600;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.reviews-score {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.45rem 0.75rem;
+  margin: -0.35rem 0 1.5rem;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.reviews-score-value {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.reviews-score-stars {
+  color: #c4b7a4;
+  letter-spacing: 0.08em;
+  font-size: 1.15rem;
+}
+
+.reviews-score-meta {
+  width: 100%;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Trustindex — force readable text on dark reviews band */
+.reviews .ti-widget,
+.reviews .ti-widget .ti-widget-container,
+.reviews .ti-widget .ti-header,
+.reviews .ti-widget .ti-header *,
+.reviews .ti-widget .ti-footer,
+.reviews .ti-widget .ti-footer *,
+.reviews .ti-widget .ti-name,
+.reviews .ti-widget .ti-date,
+.reviews .ti-widget .ti-review-content,
+.reviews .ti-widget .ti-stars-text,
+.reviews .ti-widget .ti-rating,
+.reviews .ti-widget .ti-profile-details,
+.reviews .ti-widget .ti-profile-details *,
+.reviews .ti-widget a {
+  color: #fff !important;
+}
+
+.reviews .ti-widget .ti-review-item > .ti-inner {
+  color: #fff !important;
+}
+
+.reviews .ti-widget .ti-date {
+  opacity: 0.75 !important;
+}
+
+/* ========== FAQ ========== */
+.faq {
+  padding: 4.25rem 0 4.5rem;
+  background: #0a0a0a;
+  color: var(--white);
+}
+
+.faq-header {
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+.faq-eyebrow {
+  margin: 0 0 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.faq-header h2 {
+  margin: 0 auto;
+  max-width: 18ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.faq-intro {
+  margin: 0.85rem auto 0;
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.faq-stack {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0.15rem 0.85rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon {
+  position: relative;
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--white);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.faq-icon::before {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.5px;
+  transform: translateY(-50%);
+}
+
+.faq-icon::after {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1.5px;
+  transform: translateX(-50%);
+}
+
+.faq-item[open] .faq-icon::after {
+  transform: translateX(-50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-body {
+  padding: 0 0 1.05rem;
+  overflow: hidden;
+}
+
+.faq-item[open] .faq-body {
+  animation: faq-open 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.faq-body p {
+  margin: 0;
+  max-width: 68ch;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.faq-body a {
+  color: #c4b7a4;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.faq-body a:hover {
+  color: var(--white);
+}
+
+/* ========== Contact ========== */
+.contact {
+  padding: 4.5rem 0 4rem;
+  background: #000;
+  color: var(--white);
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.contact-header::before,
+.contact-header::after {
+  content: "";
+  flex: 1 1 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+  min-width: 2rem;
+}
+
+.contact-header-text {
+  flex: 0 1 auto;
+  text-align: center;
+  max-width: 28rem;
+}
+
+.contact-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 700;
+}
+
+.contact-header p {
+  margin: 0.65rem 0 0;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.contact-book {
+  max-width: 980px;
+  margin: 0 auto 2.5rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.contact-book-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-book-copy {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.contact-book-cta {
+  display: inline-flex;
+  margin-top: 1rem;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(159, 142, 126, 0.28);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-book-cta:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(159, 142, 126, 0.42);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-meta {
+  display: grid;
+  gap: 1.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-meta li {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.contact-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-meta a,
+.contact-meta span:not(.contact-label) {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.contact-meta a:hover {
+  color: #c4b7a4;
+}
+
+.map-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.map-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.25) contrast(1.05);
+}
+
+#contact-form {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+#contact-form label {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  border: 0;
+  background: var(--white);
+  color: var(--black);
+  padding: 0.85rem 0.95rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+#contact-form textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-submit {
+  justify-self: start;
+  margin-top: 0.35rem;
+  min-width: 9rem;
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  padding: 0.85rem 1.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+[data-cwd-contact-status] {
+  margin: 0;
+  min-height: 1.35em;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Contact success modal */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.contact-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.contact-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.contact-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 26rem);
+  padding: 2.25rem 2rem 2rem;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--white);
+  text-align: center;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.55rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-modal-close:hover {
+  color: var(--white);
+}
+
+.contact-modal-message {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-modal {
+    transition: none;
+  }
+}
+
+body.contact-modal-open {
+  overflow: hidden;
+}
+
+/* ========== Footer ========== */
+.site-footer {
+  background: #000;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 1.25rem 0 1.5rem;
+  font-size: 0.82rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.1rem;
+  width: 100%;
+  margin: 0 0 0.35rem;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.footer-nav a[aria-current="page"] {
+  color: var(--accent-active);
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.site-footer a:hover {
+  color: var(--white);
+}
+
+/* Interior page stubs */
+.page-stub {
+  min-height: 70vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: calc(var(--header-offset) + 3rem) 1.5rem 4rem;
+  background: var(--ink);
+}
+
+.page-stub h1 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 700;
+}
+
+.page-stub p {
+  margin: 0 0 1.25rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.page-stub-link {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.page-stub-link:hover {
+  color: var(--accent-active);
+}
+
+/* Motion */
+/* Motion — Divi-style fadeLeft / fadeRight */
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-12%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(12%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes about-drop-pulse {
+  0% {
+    opacity: 0;
+    transform: translateY(-56px) scale(0.88);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.06);
+  }
+  75% {
+    transform: translateY(-6px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes faq-open {
+  from {
+    opacity: 0;
+    transform: translateY(-0.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ========== Our Services page ========== */
+.hero--page {
+  min-height: min(88vh, 820px);
+}
+
+.hero-media--services {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.28) 48%, rgba(0, 0, 0, 0.42) 100%),
+    url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/services-page-hero.jpg") center / cover no-repeat;
+}
+
+.hero-media--packages {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.28) 48%, rgba(0, 0, 0, 0.42) 100%),
+    url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/packages-page-hero.jpg") center / cover no-repeat;
+}
+
+.hero-content--page {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "intro"
+    "ctas";
+  align-content: center;
+  row-gap: 1.85rem;
+}
+
+.services-catalog {
+  position: relative;
+  padding: 4.25rem 0 4.75rem;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse 70% 55% at 82% 18%, rgba(255, 255, 255, 0.05), transparent 58%),
+    radial-gradient(circle at 12% 88%, rgba(159, 142, 126, 0.08), transparent 42%),
+    #0a0a0a;
+  overflow: hidden;
+}
+
+.services-catalog::before {
+  content: "";
+  position: absolute;
+  inset: 8% auto auto 55%;
+  width: min(52vw, 640px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 28px solid rgba(255, 255, 255, 0.03);
+  box-shadow:
+    inset 0 0 0 70px rgba(255, 255, 255, 0.015),
+    inset 0 0 0 120px rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+}
+
+.services-catalog .container {
+  position: relative;
+  z-index: 1;
+}
+
+.service-featured {
+  margin: 0 0 3rem;
+  max-width: none;
+}
+
+.service-featured-label {
+  margin: 0 0 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.services-menu-title {
+  margin: 2.5rem 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--white);
+}
+
+.service-accordion summary h3 {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.service-accordion-stack {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+}
+
+.service-accordion-stack .service-accordion {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+}
+
+.service-accordion-stack .service-accordion:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.service-accordion {
+  margin: 0 0 2.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.service-accordion-stack .service-accordion summary {
+  padding: 0.8rem 0.15rem 0.8rem 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.service-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.35rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.service-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-accordion-stack .service-accordion-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  opacity: 0.7;
+}
+
+.service-accordion-icon {
+  position: relative;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
+.service-accordion-icon::before,
+.service-accordion-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--white);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.service-accordion-icon::before {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.5px;
+  transform: translateY(-50%);
+}
+
+.service-accordion-icon::after {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1.5px;
+  transform: translateX(-50%);
+}
+
+.service-accordion[open] .service-accordion-icon::after {
+  transform: translateX(-50%) rotate(90deg);
+  opacity: 0;
+}
+
+.service-accordion-stack .service-accordion-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(12rem, 0.85fr);
+  gap: 1.75rem 2.5rem;
+  align-items: start;
+  padding: 0.35rem 0 1.25rem;
+  border-top: 0;
+}
+
+.service-accordion-body {
+  padding: 0 1.35rem 1.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-accordion-copy p,
+.service-accordion-body p {
+  margin: 0.85rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: none;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.service-accordion-copy p:first-child,
+.service-accordion-stack .service-accordion-body .service-accordion-copy p:first-child {
+  margin-top: 0;
+}
+
+.service-accordion-aside {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.service-accordion-aside-label {
+  margin: 0 0 0.55rem !important;
+  font-size: 0.68rem !important;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.service-accordion-aside > p:not(.service-accordion-aside-label):not(.service-accordion-aside-note) {
+  margin: 0 !important;
+  font-family: var(--font-display);
+  font-size: 1.15rem !important;
+  font-weight: 700;
+  line-height: 1.3 !important;
+  color: var(--white) !important;
+}
+
+.service-accordion-aside-note {
+  margin: 0.45rem 0 0 !important;
+  font-size: 0.88rem !important;
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+
+.service-accordion-aside ul,
+.service-accordion-body ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+}
+
+.service-accordion-aside li + li,
+.service-accordion-body li + li {
+  margin-top: 0.35rem;
+}
+
+.service-ask,
+.package-ask {
+  display: inline-flex;
+  margin-top: 1rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(159, 142, 126, 0.22);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.service-ask:hover,
+.package-ask:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(159, 142, 126, 0.38);
+}
+
+.package--light .package-ask {
+  border-color: rgba(26, 26, 26, 0.28);
+  background: rgba(159, 142, 126, 0.18);
+  color: #1a1a1a;
+}
+
+.package--light .package-ask:hover {
+  border-color: rgba(26, 26, 26, 0.45);
+  background: rgba(159, 142, 126, 0.32);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 2rem;
+}
+
+.service-block {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+.service-block-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.service-block h2,
+.service-block h3 {
+  margin: 0;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  width: fit-content;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.service-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+}
+
+.service-block li + li {
+  margin-top: 0.4rem;
+}
+
+/* ========== Packages page ========== */
+.package {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 4.25rem 0 4.5rem;
+}
+
+.package-parallax {
+  position: absolute;
+  inset: -35% 0;
+  z-index: 0;
+  background-color: inherit;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.package > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.package--light {
+  color: #1a1a1a;
+  background-color: #ece9e4;
+}
+
+.package--light .package-parallax {
+  background-image:
+    linear-gradient(180deg, rgba(150, 135, 119, 0.18), rgba(150, 135, 119, 0.18)),
+    url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/packages-bg-light.png");
+}
+
+.package--dark {
+  color: var(--white);
+  background-color: #0a0a0a;
+}
+
+.package--dark .package-parallax {
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.35)),
+    url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/packages-bg-dark.jpg");
+}
+
+.package-header {
+  margin-bottom: 2.25rem;
+}
+
+.package-header h2 {
+  margin: 0;
+  max-width: 28ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.package-tagline {
+  margin: 0.85rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.package--light .package-tagline {
+  color: rgba(26, 26, 26, 0.72);
+}
+
+.package-trust {
+  margin: 0.85rem 0 0;
+  max-width: 42rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.package-trust a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.package-trust a:hover {
+  color: var(--accent-active);
+}
+
+.package--light .package-trust {
+  color: rgba(26, 26, 26, 0.78);
+}
+
+.package--dark .package-tagline {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.package-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 3rem;
+  align-items: start;
+}
+
+.package-col h3 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid currentColor;
+  width: fit-content;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.package--light .package-col h3 {
+  border-bottom-color: rgba(26, 26, 26, 0.35);
+}
+
+.package--dark .package-col h3 {
+  border-bottom-color: rgba(255, 255, 255, 0.45);
+}
+
+.package-col ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.package--light .package-col ul {
+  color: rgba(26, 26, 26, 0.82);
+}
+
+.package--dark .package-col ul {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.package-col li + li {
+  margin-top: 0.45rem;
+}
+
+.package-note {
+  margin: 0;
+  max-width: 52rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .hero-intro,
+  .hero-cta,
+  .hero-services li {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .about-card--middle .about-card-photo,
+  .about.is-inview .about-card--middle .about-card-photo {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+
+  .package-parallax {
+    inset: 0;
+    transform: none !important;
+  }
+
+  .faq-item[open] .faq-body {
+    animation: none !important;
+  }
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 960px) {
+  .hero-panel {
+    display: none;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "services"
+      "ctas";
+    align-content: end;
+    padding: 9rem 0 2rem;
+    row-gap: 1.75rem;
+  }
+
+  .hero-intro,
+  .hero-ctas,
+  .hero-services {
+    width: min(100% - 2.5rem, var(--max));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-services {
+    justify-self: start;
+    width: min(100% - 2.5rem, var(--max));
+    padding-left: 1.35rem;
+    gap: 1.55rem;
+  }
+
+  .hero-services li {
+    grid-template-columns: 68px 1fr;
+    min-height: 3.25rem;
+  }
+
+  .hero-services img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .about-cards,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem 1.5rem;
+  }
+
+  .package-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-content--page {
+    align-content: end;
+  }
+
+  .about-card-photo {
+    width: 220px;
+    height: 220px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-header::before,
+  .contact-header::after {
+    display: none;
+  }
+
+  .contact-header {
+    justify-content: center;
+  }
+
+  .nav-bar-inner {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 0.15rem);
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.65rem;
+    background: rgba(0, 0, 0, 0.98);
+    border: 1px solid var(--line);
+    z-index: 40;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 0.9rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .hero-media:not(.hero-media--services):not(.hero-media--packages) {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.55)),
+      url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/services-mobile.jpg");
+  }
+
+  .hero-media--services {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.58)),
+      url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/services-page-hero.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero-media--packages {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.58)),
+      url("https://media.cwd-cdn.com/tates-motorcar-ltd/images/packages-page-hero.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero-services {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .service-accordion-stack .service-accordion summary {
+    padding: 0.75rem 0.1rem 0.75rem 0;
+  }
+
+  .service-accordion-stack .service-accordion-body {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.2rem 0 0.95rem;
+  }
+
+  .motosel {
+    text-align: center;
+  }
+
+  .motosel-icon {
+    margin-inline: auto;
+  }
+}
