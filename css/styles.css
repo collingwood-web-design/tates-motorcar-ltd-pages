@@ -1028,6 +1028,33 @@ ul {
   color: #c4b7a4;
 }
 
+.contact-social {
+  display: inline-grid;
+  place-items: center;
+  justify-self: start;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-top: 1.5rem;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 0.85rem;
+  color: var(--white);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-social:hover {
+  background: var(--accent-active);
+  border-color: var(--accent-active);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-social:hover {
+    transform: none;
+  }
+}
+
 .map-wrap {
   position: relative;
   width: 100%;
