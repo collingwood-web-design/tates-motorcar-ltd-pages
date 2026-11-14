@@ -756,32 +756,6 @@ ul {
   color: rgba(255, 255, 255, 0.78);
 }
 
-/* Trustindex — force readable text on dark reviews band */
-.reviews .ti-widget,
-.reviews .ti-widget .ti-widget-container,
-.reviews .ti-widget .ti-header,
-.reviews .ti-widget .ti-header *,
-.reviews .ti-widget .ti-footer,
-.reviews .ti-widget .ti-footer *,
-.reviews .ti-widget .ti-name,
-.reviews .ti-widget .ti-date,
-.reviews .ti-widget .ti-review-content,
-.reviews .ti-widget .ti-stars-text,
-.reviews .ti-widget .ti-rating,
-.reviews .ti-widget .ti-profile-details,
-.reviews .ti-widget .ti-profile-details *,
-.reviews .ti-widget a {
-  color: #fff !important;
-}
-
-.reviews .ti-widget .ti-review-item > .ti-inner {
-  color: #fff !important;
-}
-
-.reviews .ti-widget .ti-date {
-  opacity: 0.75 !important;
-}
-
 /* ========== FAQ ========== */
 .faq {
   padding: 4.25rem 0 4.5rem;
